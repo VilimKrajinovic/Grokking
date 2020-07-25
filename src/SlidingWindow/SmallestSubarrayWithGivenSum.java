@@ -1,23 +1,22 @@
-package SlidingWindow;
+package slidingwindow;
 
 public class SmallestSubarrayWithGivenSum {
 
     public static int findMinSubArray(int s, int[] arr) {
-        int windowSum = 0;
+        int minLength = Integer.MAX_VALUE;
         int windowStart = 0;
-        int min = Integer.MAX_VALUE;
+        int windowSum = 0;
 
         for (int windowEnd = 0; windowEnd < arr.length; windowEnd++) {
             windowSum += arr[windowEnd];
 
-            while (windowSum >= s) {
-                min = Math.min(min, windowEnd - windowStart + 1);
+            while(windowSum >= s){
+                minLength = Math.min(minLength, windowEnd - windowStart + 1);
                 windowSum -= arr[windowStart];
                 windowStart++;
             }
         }
-
-        return min == Integer.MAX_VALUE ? 0 : min;
+        return minLength == Integer.MAX_VALUE ? 0 : minLength;
     }
 
     public static void main(String[] args) {

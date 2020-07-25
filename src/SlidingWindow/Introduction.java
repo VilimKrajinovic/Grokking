@@ -1,4 +1,4 @@
-package SlidingWindow;
+package slidingwindow;
 
 import java.util.Arrays;
 
@@ -12,7 +12,7 @@ public class Introduction {
         for (int windowEnd = 0; windowEnd < arr.length; windowEnd++) {
             windowSum += arr[windowEnd];
 
-            if (windowEnd >= k - 1) {
+            if(windowEnd >= k - 1){
                 result[windowStart] = windowSum / k;
                 windowSum -= arr[windowStart];
                 windowStart++;

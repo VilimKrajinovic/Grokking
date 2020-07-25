@@ -1,11 +1,11 @@
-package SlidingWindow;
+package slidingwindow;
 
 public class MaximumSumSubarrayOfSizeK {
 
     public static int findMaxSumSubArray(int k, int[] arr) {
-        int maxSum = Integer.MIN_VALUE;
-        int windowSum = 0;
+        int maxSum = 0;
         int windowStart = 0;
+        int windowSum = 0;
 
         for (int windowEnd = 0; windowEnd < arr.length; windowEnd++) {
             windowSum += arr[windowEnd];
